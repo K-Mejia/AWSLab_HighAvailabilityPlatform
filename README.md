@@ -356,7 +356,6 @@ Building this lab end-to-end provided hands-on experience with the core services
 
 - **High availability is a design decision, not a single service.** The ALB, the Auto Scaling Group, and the multi-AZ subnet layout only work together. Removing any one of them breaks the fault tolerance guarantee.
 - **The Auto Scaling Group is the real engine of availability.** The ALB distributes traffic, but it is the ASG that replaces failed instances without manual intervention.
-- **One NAT Gateway per AZ is not optional in a strict HA design.** A single NAT Gateway creates a hidden single point of failure for outbound traffic in the private subnets.
 - **Security Groups should reference each other, not CIDR ranges.** Allowing the EC2 instances to accept traffic only from the ALB Security Group enforces the principle of least privilege more cleanly than IP-based rules.
 - **Consistent tagging and naming pay off.** Following a naming convention and a tagging strategy from the start makes resources easier to identify, audit, and clean up.
 
@@ -365,9 +364,3 @@ Building this lab end-to-end provided hands-on experience with the core services
 - **Order of operations matters.** Subnets must exist before NAT Gateways, route tables must be associated before traffic flows, and the Target Group must be attached to the ASG before instances can register.
 - **Metadata retrieval requires IMDSv2.** The older IMDSv1 approach is disabled by default on Amazon Linux 2023, so the user data script must request a token first.
 - **Simulating an AZ failure is not trivial from the console.** Instance-level failure is easy to test; full AZ failure requires manually terminating all instances in one AZ.
-
-### What I Would Do Differently
-
-- **Automate provisioning with Terraform or CloudFormation.** Doing everything through the console is valuable for learning, but not reproducible. A future iteration of this lab could be fully automated as Infrastructure as Code.
-- **Add HTTPS with an ACM certificate.** The current setup only serves HTTP. Adding a certificate and an HTTPS listener would make the architecture closer to a production-ready design.
-- **Define scaling policies.** The ASG currently maintains a fixed capacity. Target tracking or step scaling policies would make the platform respond automatically to traffic changes.
