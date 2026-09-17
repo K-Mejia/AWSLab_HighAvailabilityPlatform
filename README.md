@@ -171,7 +171,7 @@ This phase provisions the compute layer: a Launch Template that defines the inst
 
 The following script runs on instance launch:
 
-\`\`\`bash
+```bash
 #!/bin/bash
 
 dnf update -y
@@ -280,7 +280,7 @@ cat <<EOF > /usr/share/nginx/html/index.html
 EOF
 
 systemctl restart nginx
-\`\`\`
+```
 
 ### Phase 5 - Load Balancer and Target Group
 
