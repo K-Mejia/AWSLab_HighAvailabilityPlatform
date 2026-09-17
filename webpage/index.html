@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS High Availability Lab</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            gap: 1.5rem;
+        }
+        h1 {
+            color: #f89538;
+            font-size: 1.4rem;
+            margin: 0;
+        }
+        .card {
+            background: #1e293b;
+            padding: 2.5rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            max-width: 480px;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            color: #a78bfa;
+            font-size: 1.2rem;
+            margin: 0 0 1.2rem 0;
+            text-align: center;
+        }
+        p {
+            margin: 0.6rem 0;
+            font-size: 0.95rem;
+        }
+        strong {
+            color: #94a3b8;
+            display: inline-block;
+            min-width: 130px;
+        }
+        code {
+            background: #334155;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>AWS High Availability Lab</h1>
+    <div class="card">
+        <div class="logo">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                 stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+            </svg>
+        </div>
+        <h2>Instance Details</h2>
+        <p><strong>Hostname:</strong> <code>$HOSTNAME</code></p>
+        <p><strong>Instance ID:</strong> <code>$INSTANCE_ID</code></p>
+        <p><strong>Availability Zone:</strong> <code>$AZ</code></p>
+        <p><strong>Private IP:</strong> <code>$PRIVATE_IP</code></p>
+    </div>
+</body>
+</html>
