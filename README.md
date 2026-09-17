@@ -73,7 +73,7 @@ not affect outbound connectivity for the other.
 
 #### Final Arquitecure 
 
-![Architecture](resources/Architecture.svg)
+![Architecture](images/Architecture.svg)
 
 
 ### Phase 2 - Implementation: Networking
